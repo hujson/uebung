@@ -6,6 +6,7 @@ while True:
     print("(i) immatrikulieren")
     print("(e) exmatrikulieren")
     print("(a) anzeigen aller Studenten")
+    print("(s) zum schreiben in textdatei")
     print("(x) beenden")
     
     eingabe = input()
@@ -28,6 +29,11 @@ while True:
             print(Studenten[i].matnr)
     elif(eingabe == 'x'):
         break
+    elif(eingabe == 's'):
+        datei = open("test.txt", "w")
+        for i in range(len(Studenten)):
+            datei.write(Studenten[i].name + " " + Studenten[i].vorname + " " + str(Studenten[i].matnr))
+        datei.close
     else:
         print("Ungueltige Eingabe")
         continue
